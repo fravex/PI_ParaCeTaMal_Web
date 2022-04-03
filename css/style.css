@@ -62,6 +62,9 @@ main{
 
 
 .descricao_projeto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 16px;
     font-weight: 400;
     border-radius: 50px 0px 50px 0px;
