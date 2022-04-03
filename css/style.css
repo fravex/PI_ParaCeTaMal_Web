@@ -8,14 +8,11 @@ nav{
     color: #FFFFFF;
     padding: 16px;
     height: 32px;
-
 }
 
 .container{
     display: flex;
     justify-content:  space-between;
-
-
 }
 
 #fechar{
@@ -27,7 +24,6 @@ nav{
     font-family: "Material Icons";
     font-size: 2rem;
     opacity: 90%;
-
 }
 
 .lista_menu{
@@ -48,7 +44,6 @@ a:hover{
     display: flex;
     flex-direction: column;
     padding: 0;
-
 }
 
 
@@ -58,14 +53,15 @@ a:hover{
 }
 
 
-
-
 main{
     padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
-.container_estilizado{
+.descricao_projeto{
     font-size: 16px;
     font-weight: 400;
     border-radius: 50px 0px 50px 0px;
@@ -74,4 +70,28 @@ main{
     width: 328px;
     height: 320px;
     background: #C0FFF6;
+}
+
+.botao_consultar_interacoes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+    width: 328px;
+    height: 80px;
+    left: 16px;
+    background: #008894;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 40px;
+    padding-top: 16px;
+}
+
+.botao_consultar_interacoes:hover{
+    transition: 0.2s;
+    color:rgba(254, 247, 94, 1);
+}
+
+
+.icones_botao_consulta{
+    font-family: "Material Icons";
 }
