@@ -99,3 +99,31 @@ main{
 .icones_botao_consulta{
     font-family: "Material Icons";
 }
+
+
+footer{
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #008894;
+
+}
+
+.footer_info p{
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+
+.footer_info{
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_info_2{
+    color:rgba(254, 247, 94, 1);
+    font-weight: bold;
+
+}
