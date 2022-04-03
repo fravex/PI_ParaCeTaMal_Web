@@ -1,0 +1,77 @@
+body{
+    margin: 0;
+    font-family: 'Oxygen', sans-serif;
+}
+
+nav{
+    background-color: rgba(0, 136, 148, 1);
+    color: #FFFFFF;
+    padding: 16px;
+    height: 32px;
+
+}
+
+.container{
+    display: flex;
+    justify-content:  space-between;
+
+
+}
+
+#fechar{
+    display: none;
+}
+
+#fechar, #abrir{
+    cursor: pointer;
+    font-family: "Material Icons";
+    font-size: 2rem;
+    opacity: 90%;
+
+}
+
+.lista_menu{
+    display: none;
+}
+
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+a:hover{
+    transition: 0.2s;
+    color:rgba(254, 247, 94, 1);
+}
+
+.lista_menu_show{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+}
+
+
+.lista_menu li{
+    list-style: none;
+    margin-bottom: 0.5rem;
+}
+
+
+
+
+main{
+    padding: 16px;
+}
+
+
+.container_estilizado{
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 50px 0px 50px 0px;
+    text-align: justify;
+    padding: 16px;
+    width: 328px;
+    height: 320px;
+    background: #C0FFF6;
+}
