@@ -80,6 +80,7 @@ main{
     font-weight: 400;
     border-radius: 50px 0px 50px 0px;
     text-align: justify;
+    line-height: 24px;
     padding: 16px;
     width: 328px;
     height: 320px;
@@ -135,6 +136,7 @@ footer{
     width: 90vw;
     display: flex;
     justify-content: space-between;
+    text-align: center;
 }
 
 .footer_info_2{
