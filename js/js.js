@@ -1,20 +1,20 @@
-console.log('ola')
+console.log('Ok')
 
 
-$( "#abrir" ).click(function() {
+$( "#btn_abrir" ).click(function() {
     $( "nav" ).css( "transition", "1s" );
     $( "nav"  ).css( "height", "200" );
-    $( "#abrir"  ).css( "display", "none" );
-    $( "#fechar"  ).css( "display", "inline" );
+    $( "#btn_abrir"  ).css( "display", "none" );
+    $( "#btn_fechar"  ).css( "display", "inline" );
     $( ".lista_menu" ).addClass("lista_menu_show")
 }); 
 
 
-$( "#fechar" ).click(function() {
+$( "#btn_fechar" ).click(function() {
     $( "nav" ).css( "transition", ".5s" );
     $( "nav"  ).css( "height", "32" );
-    $( "#fechar"  ).css( "display", "none" );
-    $( "#abrir"  ).css( "display", "inline" );
+    $( "#btn_fechar"  ).css( "display", "none" );
+    $( "#btn_abrir"  ).css( "display", "inline" );
     $( ".lista_menu_show" ).removeClass("lista_menu_show")
 
 

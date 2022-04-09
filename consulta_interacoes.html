@@ -34,21 +34,34 @@
         </nav>
     </header>
 
+    <div class="container">
+        <a href="index.html" class="btn_voltar">arrow_back</a>
+    </div>
 
     <main>
-        <div class="descricao_projeto">
-            <p class="texto_descricao_projeto">Breve explicação do projeto e seu funcionamento. Lorem Ipsum
-                is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever 
-                since the 1500s, when an unknown printer took a galley of type
-                and scrambled it to make a type specimen book. 
-            </p>
-
+        <div class="formulario_consulta">
+                <form action="" class="formulario">
+                    <div class="componentes">
+                        <label for=componente_1>Componente 1</label>
+                        <input class="input_componente" type="text" placeholder="bromoprida" id="componente_1" name="componente_1">
+                    </div>
+                    <div class="componentes">
+                        <label for=componente_1>Componente 2</label>
+                        <input class="input_componente" type="text" placeholder="paracetamol" id="componente_2" name="componente_2">
+                    </div>
+                    <div class="ajuda_e_botao_consulta">
+                        <div class="ajuda_consulta">
+                            <div>
+                                <img class="icone_info" src="img/info.svg" alt="">
+                            </div>
+                            <div>
+                                <p >Selecione os componentes 1 e 2 e depois clique em “Consultar Interações” para obter o resultado da interação.</p>
+                            </div>
+                        </div>
+                        <button class="btn_consultar_interacao" type="submit">Consultar Interações</button>
+                    </div>
+                </form>
         </div>
-        <a class="botao_consultar_interacoes" href="consulta_interacoes.html">
-            Consultar Interações
-            <span class="icones_botao_consulta">medication_liquid + vaccines = done</span>
-        </a>
     </main>
 
     <footer>
