@@ -1,6 +1,10 @@
 body{
     margin: 0;
     font-family: 'Oxygen', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
 }
 
 /* MENU DE NAVEGACAO */
