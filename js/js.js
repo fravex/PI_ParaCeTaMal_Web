@@ -1,6 +1,3 @@
-console.log('Ok')
-
-
 $( "#btn_abrir" ).click(function() {
     $( "nav" ).css( "transition", "1s" );
     $( "nav"  ).css( "height", "200" );
