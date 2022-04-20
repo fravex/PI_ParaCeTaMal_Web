@@ -16,6 +16,14 @@ nav{
     height: 32px;
 }
 
+.nav_espandido{
+    transition: 1s;
+    background-color: rgba(0, 136, 148, 1);
+    color: #FFFFFF;
+    padding: 16px;
+    height: 200px;
+}
+
 .container_nav{
     display: flex;
     justify-content:  space-between;

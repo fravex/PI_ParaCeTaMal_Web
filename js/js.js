@@ -1,19 +1,31 @@
-$( "#btn_abrir" ).click(function() {
-    $( "nav" ).css( "transition", "1s" );
-    $( "nav"  ).css( "height", "200" );
-    $( "#btn_abrir"  ).css( "display", "none" );
-    $( "#btn_fechar"  ).css( "display", "inline" );
-    $( ".lista_menu" ).addClass("lista_menu_show")
-}); 
+function espandeMenu(){
+    barraMenu.classList.add('nav_espandido')
+    btnAbrirMenu.style.display = "none"
+    btnFecharMenu.style.display = "inline"
+    setTimeout(function(){
+        infoMenu.classList.add('lista_menu_show')
+    }, 600); 
+}
 
 
-$( "#btn_fechar" ).click(function() {
-    $( "nav" ).css( "transition", ".5s" );
-    $( "nav"  ).css( "height", "32" );
-    $( "#btn_fechar"  ).css( "display", "none" );
-    $( "#btn_abrir"  ).css( "display", "inline" );
-    $( ".lista_menu_show" ).removeClass("lista_menu_show")
+function fechaMenu(){
+    barraMenu.classList.remove('nav_espandido')
+    btnFecharMenu.style.display = "none"
+    btnAbrirMenu.style.display = "inline"
+    infoMenu.classList.remove('lista_menu_show')
+
+}
 
 
+const barraMenu = document.querySelector('nav');
+const btnAbrirMenu = document.querySelector('#btn_abrir')
+const btnFecharMenu = document.querySelector('#btn_fechar')
+const infoMenu = document.querySelector('.lista_menu')
 
-}); 
+btnAbrirMenu.addEventListener("click", espandeMenu);
+btnFecharMenu.addEventListener("click", fechaMenu);
+
+
+function abrirMenu(){
+
+}
