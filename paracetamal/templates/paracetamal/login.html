@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} ParaceTAMal - Login {% endblock %}
+
+
+{% block content %}
+
+
+<main class="login_main acessibilidade">
+    <div class="formulario_login">
+        <form method="post" action="{{ 'login_view' }}" class="formulario login_senha">
+            {% csrf_token %}
+            <div class="login_senha">
+                <label for=usuario>Usuário</label>
+                <input class="input_login_senha" type="text" id="usuario" name="usuario" autocomplete="off" required>
+                <label for=senha>Senha</label>
+                <input class="input_login_senha" type="password" id="senha" name="senha" autocomplete="off" required>
+            </div>
+    </div>
+    <div class="container_btn_login">
+        <button class="btn_login" type="submit">Entrar</button>
+    </div>
+        </form>
+</main>
+
+{% endblock %}

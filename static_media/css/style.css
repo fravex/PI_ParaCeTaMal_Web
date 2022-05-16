@@ -1,0 +1,417 @@
+body{
+    background-color: #0088940d;
+    margin: 0;
+    font-family: 'Oxygen', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+/* MENU DE NAVEGACAO */
+
+nav{
+    background-color: rgba(0, 136, 148, 1);
+    color: #FFFFFF;
+    padding: 16px;
+    height: 32px;
+}
+
+
+.nav_espandido{
+    transition: 1s;
+    background-color: rgba(0, 136, 148, 1);
+    color: #FFFFFF;
+    padding: 16px;
+    height: 216px;
+}
+
+.container_nav{
+    display: flex;
+    justify-content:  space-between;
+}
+
+#btn_fechar{
+    display: none;
+}
+
+#btn_fechar, #btn_abrir{
+    cursor: pointer;
+    font-family: "Material Icons";
+    font-size: 2rem;
+    opacity: 90%;
+}
+
+.lista_menu{
+    display: none;
+}
+
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+    
+}
+
+a:hover{
+    transition: 0.2s;
+    color:rgba(254, 247, 94, 1);
+}
+
+.lista_menu_show{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+
+.lista_menu li{
+    list-style: none;
+    margin-bottom: 0.5rem;
+}
+
+.anvisa, .kegg{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.bandeira{
+    width: 24px;
+}
+
+
+/* CONTEUDO PRINCIPAL */
+
+main{
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.descricao_projeto, .formulario_consulta, .grupo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 50px 0px 50px 0px;
+    text-align: justify;
+    line-height: 24px;
+    padding: 16px;
+    width: 328px;
+    height: 320px;
+    background: #C0FFF6;
+}
+
+.formulario_consulta{
+    height: 382px;
+}
+
+.texto_descricao_projeto::first-letter{
+    font-size: 2rem;
+}
+
+.botao_consultar_interacoes{
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+    width: 328px;
+    height: 80px;
+    left: 16px;
+    background: #008894;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 40px;
+    padding-top: 16px;
+}
+
+.botao_consultar_interacoes:hover{
+    transition: 0.2s;
+    color:rgba(254, 247, 94, 1);
+ }
+
+
+.icones_botao_consulta{
+    font-family: "Material Icons";
+}
+
+
+.imagem_medicamentos{
+    display: none;
+}
+
+.imagem_livro{
+    display: none;
+}
+
+.grupo{
+    display: flex;
+    flex-direction: column;
+}
+
+.lista_grupo_titulo{
+
+    position: relative;
+    top: -40px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    background: #008894;
+    border-radius: 3px;
+    text-align: center;
+    padding: 0 16px;
+    width: 288px;
+    height: 64px;
+}
+
+
+
+.lista_grupo{
+    list-style: none;
+    padding: 0;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+/* RODAPE */
+
+footer{
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #008894;
+
+}
+
+.footer_info p{
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+
+.footer_info{
+    width: 90vw;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.footer_info_2{
+    color:rgba(254, 247, 94, 1);
+    font-weight: bold;
+
+}
+
+
+/* CONSULTA INTERACOES */
+
+.btn_voltar{
+    font-family: 'Material Icons';
+    font-size: 28px;
+    color: #008894;
+}
+
+.btn_voltar:hover{
+    color: #008894;
+    border-bottom: solid 1px;
+}
+
+
+.container{
+    display: flex;
+    align-items: center;
+    margin: 8px 0px 0px 16px;
+    color: #008894 ;
+
+}
+
+.hiperlink_navegacao, .hiperlink_navegacao:hover {
+    color: #008894 ;
+}
+
+
+/* FORMULARIO */
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+.ajuda_e_botao_consulta{
+    display: flex;
+}
+
+.componentes{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    color: #008894;
+}
+
+.input_componente{
+    padding-left: 8px;
+    color: #FFFFFF;
+    height: 35px;
+    background: #008894;
+    border-radius: 3px;
+    border: none;
+}
+
+input:focus-visible{
+    outline-color: rgba(254, 246, 94, 0.712);
+    outline-width: 3px;
+    outline-style: solid;
+}
+
+::placeholder{
+    color: #ffffff44;
+}
+
+.ajuda_e_botao_consulta{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.ajuda_consulta{
+    width: 172px;
+    height: 135px;
+    background: rgba(0, 136, 148, 0.5);
+    border-radius: 3px;
+    line-height: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 1rem;
+
+}
+
+.icone_info{
+    position: absolute;
+    left: -5px;
+    top: 11px;
+}
+
+.btn_consultar_interacao{
+    color: #FFFFFF;
+    border: none;
+    width: 112px;
+    height: 50px;
+    background: #008894;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 25px 0px 19px;
+
+}
+
+
+.btn_consultar_interacao:hover{
+    transition: 0.2s;
+    cursor: pointer;
+    color: rgba(254, 246, 94, 0.712);
+
+}
+
+.autocomplete-result-list{
+    background-color: #008894;
+    list-style: none;
+    position: relative;
+    border: 3px solid #008894;
+    margin: 3px 0px 0px 0px;
+    padding: 0 0 0 6px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.autocomplete-result{
+    opacity: 60%;
+    padding: 6px 0 6px 0;
+    border-bottom: 1px solid rgba(254, 246, 94, 0.4);
+}
+
+.autocomplete-result:hover{
+    opacity: 100%;
+}
+
+
+/* REULTADO INTERACAO */
+
+.resultado_existe_interacao, .resultado_sem_interacao{
+    position: absolute;
+    margin-top: 36px;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    width: 352px;
+    height: 128px;
+    background: rgba(209, 79, 65);
+    border-radius: 50px 0px;
+    text-align: center;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.resultado_sem_interacao{
+    background: #008894;
+
+}
+
+.icone_alerta{
+    position: relative;
+    left: -171px;
+    top: -46px;
+
+}
+
+
+#btn_fechar_alerta{
+    font-family: "Material Icons";
+    font-size: 1rem;
+    position: relative;
+    left: 193px;
+    top: -77px;
+    border: 1px solid #008894;
+    border-radius: 8px;
+    padding: 4px;
+    cursor: pointer;
+    color: #008894;
+}
+
+#btn_fechar_alerta:hover{
+    background-color: #d1eaec;
+}
+
+
+.resultado_interacao_fundo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: #ffffffeb;
+    width: 100%;
+    height: 50%;
+}
+
+@media only screen and (min-width: 1150px) {
+    .imagem_medicamentos, .imagem_livro{
+        display: inline;
+        height: 400px;
+        border-radius: 40px;
+    }
+
+    main{
+        padding: 16px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+  }

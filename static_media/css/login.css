@@ -1,0 +1,75 @@
+.formulario_login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 50px 0px 50px 0px;
+    text-align: justify;
+    line-height: 24px;
+    padding: 16px;
+    width: 328px;
+    height: 220px;
+    background: #008894;
+}
+
+
+.login_senha{
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login_senha label{
+    color: #FFFFFF;
+}
+
+.container_btn_login{
+    display: flex;
+    justify-content: end;
+    margin-top: 16px;
+    width: 328px;
+}
+
+.btn_login{
+    color: #FFFFFF;
+    border: none;
+    width: 112px;
+    height: 50px;
+    background: #008894;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 25px 0px 19px;
+    font-size: 16px;
+
+}
+
+.btn_login:hover{
+    transition: 0.2s;
+    cursor: pointer;
+    color: rgba(254, 246, 94, 0.712);
+
+}
+
+.input_login_senha{
+    padding-left: 8px;
+    color: #008894;
+    height: 35px;
+    background: #C0FFF6 ;
+    border-radius: 3px;
+    border: none;
+    margin-bottom: 16px;
+}
+
+
+
+
+@media only screen and (min-width: 1150px) {
+
+    .login_main{
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+  }

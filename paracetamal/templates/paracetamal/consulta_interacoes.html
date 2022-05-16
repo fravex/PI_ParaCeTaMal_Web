@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Consulta Interações - ParaceTAMal {% endblock %}
+
+
+{% block content %}
+
+    <div class="container">
+        <a href="{% url 'index' %}" class="btn_voltar">arrow_back</a>
+        <a class="hiperlink_navegacao" href="{% url 'index' %}">Home</a>
+        <a class="hiperlink_navegacao" href="{% url 'consulta_interacoes' %}" style="margin-left: 5px ;">/ Consulta Interações</a>
+    </div>
+
+    <main>
+        <div class="formulario_consulta">
+                <form method="post" action="{{ 'consulta_interacoes' }}" class="formulario">
+                    {% csrf_token %}
+                    <div id="autocomplete1">
+                        <div id="autocomplete" class="autocomplete componentes">
+                            <label for=componente_1>Componente 1</label>
+                            <input class="input_componente" type="text" placeholder="bromoprida" id="componente_1" name="componente_1" autocomplete="off" required>
+                            <ul class="autocomplete-result-list"></ul>
+                        </div>
+                        <div id="autocomplete2" class="autocomplete componentes">
+                            <label for=componente_2>Componente 2</label>
+                            <input class="input_componente " type="text" placeholder="paracetamol" id="componente_2" name="componente_2" autocomplete="off" required>
+                            <ul class="autocomplete-result-list"></ul>
+                        </div>
+                        <div class="ajuda_e_botao_consulta">
+                            <div class="ajuda_consulta">
+                                <div>
+                                    <img class="icone_info" src="{% static 'img/info.svg' %}" alt="Icone de Informação">
+                                </div>
+                                <div>
+                                    <p class="acessibilidade">Selecione os componentes 1 e 2 e depois clique em “Consultar Interações” para obter o resultado da interação.</p>
+                                </div>
+                            </div>
+                            <button class="btn_consultar_interacao" type="submit">Consultar Interações</button>
+                        </div>
+                    </div>
+                </form>
+        </div>
+
+        {% if interacao_random == '0' %}
+        <div class="resultado_interacao_fundo" >
+            <div><button><span id="btn_fechar_alerta">close</span></button></div>
+            <p class="resultado_existe_interacao acessibilidade" >Existe Interação entre os componentes: {{ componente_1 }} + {{ componente_2}}</p>
+            <div>
+                <img class="icone_alerta" src="{% static 'img/danger.svg' %}" alt="Icone de Alerta">
+            </div>
+        </div>
+        {% endif %}
+        {% if interacao_random == '1' %}
+        <div class="resultado_interacao_fundo" >
+            <div><button><span id="btn_fechar_alerta">close</span></button></div>
+            <p class="resultado_sem_interacao acessibilidade" >Não existe Interação entre os componentes: {{ componente_1 }} + {{ componente_2}}</p>
+            <div>
+                <img class="icone_alerta" src="{% static 'img/sucess.svg' %}" alt="Icone de Sucesso">
+            </div>
+        </div>
+        {% endif %}
+        <div>
+            <img class="imagem_medicamentos" src="{% static 'img/medicine.jpg' %}" alt="Imagem de medicamentos">
+        </div>
+    </main>
+
+        
+
+    {% if user.id  is  none %}
+    <!-- modal pop-up que abrirá com a msg-->
+    <div id="dv-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Alerta de Responsabilidade</h2>
+            </div>
+  
+             <div class="modal-body">
+                <p>Ao usar esta aplicação o usuário aceita que trata-se de um programa experimental, sem o fulcro de orientar
+                acerca da utilização de medicamentos.
+                <br>Todas as informações aqui obtidas devem ser interpretadas por um profissional da saúde.
+                </p>
+                <p>
+                    Para continuar efetue o login clicando no botão correspondente abaixo:
+                </p>
+    
+                <a href="https://www.freeiconspng.com/img/1554" title="Image from freeiconspng.com">
+                <img class="modal-img"
+                    src="https://www.freeiconspng.com/uploads/alert-icon-png-red-alert-round-icon-clip-art-3.png"
+                    alt="Alerta" />
+                </a>
+            </div>
+  
+            <div class="modal-footer">
+                <a class="btn_modal" onclick="closeModal('dv-modal')" href="{% url 'login_view' %}"> Login</a>
+                <a class="btn_modal" href="/"> Sair</a>
+
+            </div>
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}

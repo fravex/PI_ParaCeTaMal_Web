@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+    <title>{% block title %} {{ section.title }} {% endblock %}</title>
+</head>
+
+<body onload="openModal('dv-modal')" class="">
+    <header>
+        <nav>
+            <div class="container_nav">
+                <div>
+                    <a href="{% url 'index' %}"><img src="{% static 'img/logo.svg' %}" alt="Logo"></a>
+                </div>
+                <div>
+                    <div>
+
+                        <span id="btn_abrir">menu</span>
+                        <span id="btn_fechar">close</span>
+                    </div>
+                </div>
+            </div>
+            <ul class="lista_menu">
+                <li><a href="{% url 'consulta_interacoes' %}">Consulta Interações Medicamentosas</a> </li>
+                <li><a href="">Riscos Interação Medicamentosa</a> </li>
+                <li><a href="{% url 'integrantes_grupo' %}">Grupo - Projeto Integrador</a></li>
+                <li><a class="anvisa" href="https://www.gov.br/anvisa/pt-br">Anvisa<img class="bandeira" src="{% static 'img/brasil.svg' %}" alt="Bandeira Brasil"></a></li>
+                <li><a class="kegg" href="https://www.kegg.jp/">Kegg<img class="bandeira"  src="{% static 'img/japao.svg' %}" alt="Bandeira Japão"></a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'logout_view' %}"> Sair</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    
+
+
+    <div  >
+        <div class="container_acessibilidade" >
+            <p>Tamanho da fonte</p>
+        </div>
+        <!-- Botões de Acessibilidade -->
+        <div class="container_acessibilidade_fonte">
+            <button class="btn_acessibilidade_fonte" onClick="fonte('aumentar');"title="Aumentar">A+</button> <!-- Botão + -->
+            <button class="btn_acessibilidade_fonte" onClick="fonte('normal');" title="Normal">A</button> <!-- Botão - -->
+            <button class="btn_acessibilidade_fonte" onClick="fonte('diminuir');"title="Diminuir">A-</button> <!-- Botão - -->
+        </div>
+
+    </div>
+
+    {% block content %}
+
+    {% endblock%}
+
+
+    <footer>
+        <div class="footer_info">
+            <p>Projeto Integrador realizado<br>pelos alunos da Univesp<br>1º Semestre 2022</p>
+            <img src="{% static 'img/logo.svg' %}" alt="Logo">
+        </div>
+        <div>
+           <p class="footer_info_2">Aplicativo de uso experimental</p> 
+        </div>
+    </footer>
+
+    <!-- script - controla o menu e os alerta de integracao -->
+    <script src="{% static 'js/menu_alerta.js' %}"></script>
+    <!-- script - gerencia o autocomplete para busca de componentes -->
+    <script src="https://unpkg.com/@trevoreyre/autocomplete-js"></script>
+    <script src="{% static 'js/autocomplete.js' %}"></script>
+    <!-- script para aumentar ou diminuir fonte-->
+    <script src="{% static 'js/acessibilidade.js' %}"></script>
+    <!-- script para abrir e fechar o pop-up-->
+    <script src="{% static 'js/modal.js' %}"></script>
+    <!-- Biblioteca JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</body>
+
+</html>
