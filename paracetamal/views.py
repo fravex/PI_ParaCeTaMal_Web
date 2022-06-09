@@ -9,14 +9,17 @@ def index(request):
     return render (request, 'paracetamal/index.html')
 
 def consulta_interacoes(request):
-    
     big_table_nomes = BigtableNomes.objects.all()
 
-    if request.method == 'POST':
-        componente_1 = request.POST['componente_1']
-        componente_2 = request.POST['componente_2']
-        interacao_random = str(randint(0,1))
-        return render(request, 'paracetamal/consulta_interacoes.html', {'big_table_nomes':big_table_nomes, 'interacao_random':interacao_random, 'componente_1':componente_1, 'componente_2':componente_2})
+    if request.user.username == 'admin':
+        if request.method == 'POST':
+            componente_1 = request.POST['componente_1']
+            componente_2 = request.POST['componente_2']
+
+            print('Componente 1: ' + componente_1,'\nComponente 2: ' + componente_2)
+
+            interacao_random = str(randint(0,1))
+            return render(request, 'paracetamal/consulta_interacoes.html', {'big_table_nomes':big_table_nomes, 'interacao_random':interacao_random, 'componente_1':componente_1, 'componente_2':componente_2})
 
     return render(request, 'paracetamal/consulta_interacoes.html', {'big_table_nomes':big_table_nomes})
 

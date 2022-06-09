@@ -6,28 +6,26 @@
 
 {% block content %}
     <div class="container">
-        <a href="{% url 'index' %}" class="btn_voltar">arrow_back</a>
         <a class="hiperlink_navegacao" href="{% url 'index' %}">Home</a>
     </div>
 
     <main >
-        <div class="descricao_projeto">
-            <p class="texto_descricao_projeto acessibilidade">Nosso modelo de dados é focado em prover buscas
-                adequadas aos medicamentos autorizados pela ANVISA e relacioná-los, através de seus
-                princípios ativos, a uma base de dados científicos adequada ao estado-da-arte para as
-                informações sobre interações medicamentosas.
-            </p>
-
+        <h1 class="titulos">App para consulta de Interações Medicamentosas</h1>
+        <div class="responsividade">
+            <div class="descricao_projeto">
+                <p class="texto_descricao_projeto acessibilidade">Esta aplicação tem como objetivo realizar buscas aos medicamentos autorizados pela ANVISA e relacioná-los, através de seus
+                    princípios ativos, a uma base de dados científicos (KEGG Drug) adequada ao estado-da-arte para as
+                    informações sobre interações medicamentosas.
+                </p>
+    
+            </div>
+            <div>
+                <a class="botao_consultar_interacoes" href="{% url 'consulta_interacoes' %}">
+                    Consultar Interações
+                    <span class="icones_botao_consulta">medication_liquid + vaccines = done</span>
+                </a>
+            </div>
         </div>
-        <div>
-            <a class="botao_consultar_interacoes" href="{% url 'consulta_interacoes' %}">
-                Consultar Interações
-                <span class="icones_botao_consulta">medication_liquid + vaccines = done</span>
-            </a>
-        </div>
-
-        
-        
     </main>
 
 {% endblock %}

@@ -13,7 +13,9 @@
     </div>
 
     <main>
-        <div class="formulario_consulta">
+        <h1 class="titulos">Consulta de Interações Medicamentosas</h1>
+        <div class="responsividade">
+            <div class="formulario_consulta acessibilidade">
                 <form method="post" action="{{ 'consulta_interacoes' }}" class="formulario">
                     {% csrf_token %}
                     <div id="autocomplete1">
@@ -40,61 +42,57 @@
                         </div>
                     </div>
                 </form>
-        </div>
+            </div>
 
-        {% if interacao_random == '0' %}
-        <div class="resultado_interacao_fundo" >
-            <div><button><span id="btn_fechar_alerta">close</span></button></div>
-            <p class="resultado_existe_interacao acessibilidade" >Existe Interação entre os componentes: {{ componente_1 }} + {{ componente_2}}</p>
+            {% if interacao_random == '0' %}
+            <div class="resultado_interacao_fundo" >
+                <div><button><span id="btn_fechar_alerta">close</span></button></div>
+                <p class="resultado_existe_interacao acessibilidade" >Existe Interação entre os componentes: {{ componente_1 }} + {{ componente_2}}</p>
+                <div>
+                    <img class="icone_alerta" src="{% static 'img/danger.svg' %}" alt="Icone de Alerta">
+                </div>
+            </div>
+            {% endif %}
+            {% if interacao_random == '1' %}
+            <div class="resultado_interacao_fundo" >
+                <div><button><span id="btn_fechar_alerta">close</span></button></div>
+                <p class="resultado_sem_interacao acessibilidade" >Não existe Interação entre os componentes: {{ componente_1 }} + {{ componente_2}}</p>
+                <div>
+                    <img class="icone_alerta" src="{% static 'img/sucess.svg' %}" alt="Icone de Sucesso">
+                </div>
+            </div>
+            {% endif %}
             <div>
-                <img class="icone_alerta" src="{% static 'img/danger.svg' %}" alt="Icone de Alerta">
+                <img class="imagem_medicamentos" src="{% static 'img/medicine.jpg' %}" alt="Imagem de medicamentos">
             </div>
         </div>
-        {% endif %}
-        {% if interacao_random == '1' %}
-        <div class="resultado_interacao_fundo" >
-            <div><button><span id="btn_fechar_alerta">close</span></button></div>
-            <p class="resultado_sem_interacao acessibilidade" >Não existe Interação entre os componentes: {{ componente_1 }} + {{ componente_2}}</p>
-            <div>
-                <img class="icone_alerta" src="{% static 'img/sucess.svg' %}" alt="Icone de Sucesso">
-            </div>
-        </div>
-        {% endif %}
-        <div>
-            <img class="imagem_medicamentos" src="{% static 'img/medicine.jpg' %}" alt="Imagem de medicamentos">
-        </div>
+        
     </main>
 
         
 
     {% if user.id  is  none %}
-    <!-- modal pop-up que abrirá com a msg-->
+    <!-- Modal pop-up que abrirá com a mensagem de alerta de responsabilidade-->
     <div id="dv-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Alerta de Responsabilidade</h2>
             </div>
-  
              <div class="modal-body">
                 <p>Ao usar esta aplicação o usuário aceita que trata-se de um programa experimental, sem o fulcro de orientar
                 acerca da utilização de medicamentos.
                 <br>Todas as informações aqui obtidas devem ser interpretadas por um profissional da saúde.
                 </p>
-                <p>
-                    Para continuar efetue o login clicando no botão correspondente abaixo:
-                </p>
-    
+                <p> Para continuar efetue o login clicando no botão correspondente abaixo:</p>
                 <a href="https://www.freeiconspng.com/img/1554" title="Image from freeiconspng.com">
                 <img class="modal-img"
                     src="https://www.freeiconspng.com/uploads/alert-icon-png-red-alert-round-icon-clip-art-3.png"
                     alt="Alerta" />
                 </a>
             </div>
-  
-            <div class="modal-footer">
+              <div class="modal-footer">
                 <a class="btn_modal" onclick="closeModal('dv-modal')" href="{% url 'login_view' %}"> Login</a>
                 <a class="btn_modal" href="/"> Sair</a>
-
             </div>
         </div>
     </div>

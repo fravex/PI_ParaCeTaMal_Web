@@ -5,33 +5,36 @@
 
 
 {% block content %}
-    <div class="container">
+<div class="container">
         <a href="{% url 'index' %}" class="btn_voltar">arrow_back</a>
         <a class="hiperlink_navegacao" href="{% url 'index' %}">Home</a>
         <a class="hiperlink_navegacao" href="{% url 'integrantes_grupo' %}" style="margin-left: 5px ;">/ Grupo - Projeto Integrador</a>
     </div>
 
 
-    <main>            
-        <div>
-            <img class="imagem_livro" src="{% static 'img/livro.jpg' %}" alt="Imagem Livro">
-        </div>
-        <div class="grupo">
-            <div class="lista_grupo_titulo">
-                <h4>Projeto Integrador em Computação II <br>
-                    Turma 006 - Grupo 33</h4>
-            </div>
-            <ul class="lista_grupo">
-                <li>ALESSANDRA MALDONADO HONORATO</li>
-                <li>DANILO FERNANDES VILAS BOAS</li>
-                <li>FLAVIO BONILHA MOREIRA CANTOS</li>
-                <li>JOÃO VICTOR FELISBERTO</li>
-                <li>LUCIANO LOPES DA SILVA</li>
-                <li>MELINA BORATTO URTADO</li>
-                <li>RAFAEL DELALIBERA RODRIGUES</li>
-                <li>RODRIGO SOARES ALEIXO</li>
-            </ul>
-        </div>
+    <main>
+		<div class="responsividade">
+			<div>
+				<img class="imagem_livro" src="{% static 'img/livro.jpg' %}" alt="Imagem Livro">
+			</div>
+			<div class="grupo">
+				<div class="lista_grupo_titulo">
+					<h4>Projeto Integrador em Computação II <br>
+						Turma 006 - Grupo 33</h4>
+				</div>
+				<ul class="lista_grupo">
+					<li>ALESSANDRA MALDONADO HONORATO</li>
+					<li>DANILO FERNANDES VILAS BOAS</li>
+					<li>FLAVIO BONILHA MOREIRA CANTOS</li>
+					<li>JOÃO VICTOR FELISBERTO</li>
+					<li>LUCIANO LOPES DA SILVA</li>
+					<li>MELINA BORATTO URTADO</li>
+					<li>RAFAEL DELALIBERA RODRIGUES</li>
+					<li>RODRIGO SOARES ALEIXO</li>
+				</ul>
+			</div>
+		</div>
+
 
     </main>
 {% endblock %}

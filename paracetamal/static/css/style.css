@@ -117,7 +117,11 @@ a:hover{
 }
 
 
+
 /* CONTEUDO PRINCIPAL */
+.titulos{
+    color: #008894;
+}
 
 main{
     padding: 16px;
@@ -125,6 +129,7 @@ main{
     flex-direction: column;
     align-items: center;
 }
+
 
 
 .descricao_projeto, .formulario_consulta, .grupo{
@@ -142,12 +147,19 @@ main{
     background: #C0FFF6;
 }
 
+
+
 .formulario_consulta{
     height: 382px;
 }
 
 .texto_descricao_projeto::first-letter{
     font-size: 2rem;
+    
+}
+
+.texto_descricao_projeto{
+    width: 90vw;
 }
 
 .botao_consultar_interacoes{
@@ -436,7 +448,16 @@ input:focus-visible{
     height: 50%;
 }
 
-@media only screen and (min-width: 1150px) {
+.responsividade{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+@media only screen and (min-width: 1280px) {
     .imagem_medicamentos, .imagem_livro{
         display: inline;
         height: 400px;
@@ -446,8 +467,15 @@ input:focus-visible{
     main{
         padding: 16px;
         display: flex;
-        flex-direction: row;
         justify-content: space-around;
+    }
+
+    .responsividade{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 2rem;
     }
 
   }
