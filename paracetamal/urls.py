@@ -9,5 +9,4 @@ urlpatterns = [
     path('consulta_interacoes', views.consulta_interacoes, name='consulta_interacoes'),
     path('integrantes_grupo', views.integrantes_grupo, name='integrantes_grupo'),
     path('autocomplete_busca_componente', views.autocomplete_busca_componente, name='autocomplete_busca_componente'),
-    path('teste', views.teste, name='teste' ),
 ]

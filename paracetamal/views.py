@@ -80,12 +80,4 @@ def integrantes_grupo(request):
     return render(request, 'paracetamal/integrantes_grupo.html')
 
 
-def teste(request):
-    componente_1 = "PRALSETINIB"
-    componente_2 = "DIAZEPAM"
-    cursor = connection.cursor()
-    cursor.execute("CALL VerificaInteracao("+'"'+componente_1+'"'+','+'"'+componente_2+'")')
-    results = cursor.fetchall()
-    return render(request, 'paracetamal/teste.html', {'results': results})
-
     
