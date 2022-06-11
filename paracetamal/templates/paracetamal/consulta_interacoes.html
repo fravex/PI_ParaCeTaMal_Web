@@ -44,7 +44,7 @@
                 </form>
             </div>
 
-            {% if interacao_random == '0' %}
+            {% if resultado_interacao == '1' %}
             <div class="resultado_interacao_fundo" >
                 <div><button><span id="btn_fechar_alerta">close</span></button></div>
                 <p class="resultado_existe_interacao acessibilidade" >Existe Interação entre os componentes: {{ componente_1 }} + {{ componente_2}}</p>
@@ -53,13 +53,19 @@
                 </div>
             </div>
             {% endif %}
-            {% if interacao_random == '1' %}
+            {% if resultado_interacao == '0' %}
             <div class="resultado_interacao_fundo" >
                 <div><button><span id="btn_fechar_alerta">close</span></button></div>
                 <p class="resultado_sem_interacao acessibilidade" >Não existe Interação entre os componentes: {{ componente_1 }} + {{ componente_2}}</p>
                 <div>
                     <img class="icone_alerta" src="{% static 'img/sucess.svg' %}" alt="Icone de Sucesso">
                 </div>
+            </div>
+            {% endif %}
+            {% if resultado_interacao == '-1' %}
+            <div class="resultado_interacao_fundo" >
+                <div><button><span id="btn_fechar_alerta">close</span></button></div>
+                <p class="resultado_erro_interacao acessibilidade" >Não foi possível verificar a interação entre os componentes <br>  Favor tentar novamente. <br> <br> {{ componente_1 }} + {{ componente_2}}</p>
             </div>
             {% endif %}
             <div>

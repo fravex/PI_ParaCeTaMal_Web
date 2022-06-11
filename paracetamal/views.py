@@ -1,27 +1,49 @@
 from django.shortcuts import redirect, render
+
 from . models import BigtableNomes
 from django.http import  JsonResponse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from random import randint
+from django.db import connection
 
 def index(request):
     return render (request, 'paracetamal/index.html')
 
 def consulta_interacoes(request):
-    big_table_nomes = BigtableNomes.objects.all()
 
     if request.user.username == 'admin':
         if request.method == 'POST':
-            componente_1 = request.POST['componente_1']
-            componente_2 = request.POST['componente_2']
-
+            componente_1 = str(request.POST["componente_1"])
+            componente_2 = str(request.POST["componente_2"])
             print('Componente 1: ' + componente_1,'\nComponente 2: ' + componente_2)
 
-            interacao_random = str(randint(0,1))
-            return render(request, 'paracetamal/consulta_interacoes.html', {'big_table_nomes':big_table_nomes, 'interacao_random':interacao_random, 'componente_1':componente_1, 'componente_2':componente_2})
+            print(componente_2)
 
-    return render(request, 'paracetamal/consulta_interacoes.html', {'big_table_nomes':big_table_nomes})
+            resultado_interacao = '0'
+
+            cursor = connection.cursor()
+
+            try: 
+                cursor.execute("CALL VerificaInteracao("+'"'+componente_1+'"'+','+'"'+componente_2+'")')
+
+            except:
+                print('except')
+                resultado_interacao = '-1'
+
+                return render(request, 'paracetamal/consulta_interacoes.html', { 'resultado_interacao':resultado_interacao, 'componente_1':componente_1, 'componente_2':componente_2})
+
+            else:
+                cursor.execute("CALL VerificaInteracao("+'"'+componente_1+'"'+','+'"'+componente_2+'")')
+                results = cursor.fetchall()
+
+                print(results)
+                
+                if results != ():
+                    resultado_interacao = '1'
+                print(resultado_interacao)
+                return render(request, 'paracetamal/consulta_interacoes.html', { 'resultado_interacao':resultado_interacao, 'componente_1':componente_1, 'componente_2':componente_2})
+
+    return render(request, 'paracetamal/consulta_interacoes.html')
 
 @login_required
 def autocomplete_busca_componente(request):
@@ -56,3 +78,14 @@ def logout_view(request):
 
 def integrantes_grupo(request):
     return render(request, 'paracetamal/integrantes_grupo.html')
+
+
+def teste(request):
+    componente_1 = "PRALSETINIB"
+    componente_2 = "DIAZEPAM"
+    cursor = connection.cursor()
+    cursor.execute("CALL VerificaInteracao("+'"'+componente_1+'"'+','+'"'+componente_2+'")')
+    results = cursor.fetchall()
+    return render(request, 'paracetamal/teste.html', {'results': results})
+
+    

@@ -8,15 +8,27 @@ new Autocomplete('#autocomplete',{
             .then(data => {
                 console.log(data.data)
                 resolve(data.data)
-                
+            
             })
-        })   
+        })  
+        
     },
+
     getResultValue: result => result.nome,
+
+
+    renderResult: (result, props) => `
+    <li ${props}>
+      <div>
+        ${result.nome}
+      </div>
+    </li> `,
+
 
     onSubmit : result => {
         console.log(result.id)
     }
+
 
 })
 
@@ -35,6 +47,15 @@ new Autocomplete('#autocomplete2',{
         })   
     },
     getResultValue: result => result.nome,
+
+
+    renderResult: (result, props) => `
+    <li ${props}>
+      <div>
+        ${result.nome}
+      </div>
+    </li> `,
+
 
     onSubmit : result => {
         console.log(result.id)
