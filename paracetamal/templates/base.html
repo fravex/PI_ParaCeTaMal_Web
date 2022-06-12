@@ -31,8 +31,8 @@
                 <li><a href="{% url 'consulta_interacoes' %}">Consulta Interações Medicamentosas</a> </li>
                 <li><a href="">Riscos - Interação Medicamentosa</a> </li>
                 <li><a href="{% url 'integrantes_grupo' %}">Grupo - Projeto Integrador</a></li>
-                <li><a class="anvisa" href="https://www.gov.br/anvisa/pt-br">Anvisa<img class="bandeira" src="{% static 'img/brasil.svg' %}" alt="Bandeira Brasil"></a></li>
-                <li><a class="kegg" href="https://www.kegg.jp/">Kegg<img class="bandeira"  src="{% static 'img/japao.svg' %}" alt="Bandeira Japão"></a></li>
+                <li><a class="anvisa" href="https://www.gov.br/anvisa/pt-br" title="Você será redirecionado para a página da ANVISA">Anvisa<img class="bandeira" src="{% static 'img/brasil.svg' %}" alt="Bandeira Brasil"></a></li>
+                <li><a class="kegg" href="https://www.kegg.jp/" title="Você será redirecionado para a página do KeggDrug">Kegg<img class="bandeira"  src="{% static 'img/japao.svg' %}" alt="Bandeira Japão"></a></li>
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'logout_view' %}"> Sair</a></li>
                 {% endif %}
